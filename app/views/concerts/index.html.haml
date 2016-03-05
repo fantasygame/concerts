@@ -1,6 +1,7 @@
+%h1.space
 %h1 Listing concerts
 
-%table
+%table.table.table-striped
   %thead
     %tr
       %th Band
@@ -24,9 +25,10 @@
         %td= concert.place
 
         %td= concert.price
-        %td= link_to 'Show', concert
-        %td= link_to 'Edit', edit_concert_path(concert)
-        %td= link_to 'Destroy', concert, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td.btn-group
+          = link_to 'Show', concert, class: "btn btn-primary"
+          = link_to 'Edit', edit_concert_path(concert), class: "btn btn-success"
+          = link_to 'Destroy', concert, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-danger"
 
 %br
 
