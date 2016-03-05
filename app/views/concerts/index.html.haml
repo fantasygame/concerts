@@ -1,0 +1,33 @@
+%h1 Listing concerts
+
+%table
+  %thead
+    %tr
+      %th Band
+
+      %th Date
+
+      %th Place
+
+      %th Price
+      %th
+      %th
+      %th
+
+  %tbody
+    - @concerts.each do |concert|
+      %tr
+        %td= concert.band
+
+        %td= concert.date
+
+        %td= concert.place
+
+        %td= concert.price
+        %td= link_to 'Show', concert
+        %td= link_to 'Edit', edit_concert_path(concert)
+        %td= link_to 'Destroy', concert, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Concert', new_concert_path

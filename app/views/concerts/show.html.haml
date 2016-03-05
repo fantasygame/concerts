@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Band:
+  = @concert.band
+%p
+  %b Date:
+  = @concert.date
+%p
+  %b Place:
+  = @concert.place
+%p
+  %b Price:
+  = @concert.price
+
+= link_to 'Edit', edit_concert_path(@concert)
+\|
+= link_to 'Back', concerts_path
